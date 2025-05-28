@@ -49,6 +49,7 @@ if (!localStorage.getItem('hasVisited')) {
 
 document.querySelector("#inicio").addEventListener("click", () => {
     videoplayer.classList.remove("hidden")
+    body.style.overflow = "hidden"
 })
 
 
@@ -63,11 +64,13 @@ intro.addEventListener("timeupdate", () => {
 triggerV1.addEventListener("click", () => {
     options.classList.add("hide")
     contReelV1.classList.remove("reel-oculto")
+    intro.pause();
 })
 
 triggerV2.addEventListener("click", () => {
     options.classList.add("hide")
     contReelV2.classList.remove("reel-oculto")
+    intro.pause();
 })
 
 reelV1.addEventListener("timeupdate", () => {
@@ -86,12 +89,18 @@ reelV2.addEventListener("timeupdate", () => {
 
 
 closeBT.addEventListener("click", () => {
-
+    options.classList.add("hide")
     videoplayer.classList.add("hidden")
     body.style.overflow = "auto"
-    reelV1.classList.add("reel-oculto")
-    reelV2.classList.add("reel-oculto")
+    contReelV1.classList.add("reel-oculto")
+    contReelV2.classList.add("reel-oculto")
     closeBT.classList.add("hidden")
+
+    intro.currentTime = 0;
+    reelV1.pause();
+    reelV1.currentTime = 0;
+    reelV2.pause();
+    reelV2.currentTime = 0;
 })
 
 
