@@ -26,6 +26,10 @@
 <body>
     <!-- CUSTOM CURSOR -->
 
+    <div id="load">
+      <!--  <p>Cargando...</p> -->
+    </div>
+
 
     <!-- MENÚ -->
     <nav>
@@ -41,11 +45,11 @@
 
     <!-- VIDEOPLAYER -->
     <div id="videoplayer">
-        <div id="intro"><iframe width="560" height="315"
-                src="https://www.youtube-nocookie.com/embed/9IfQbp9XlsU?si=WWGAHiMuX4XwiiDW"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div id="intro">
+            <video width="100%" height="100%" controls>
+                <source src="media/video/Intro.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
             <div id="options" class="hide">
                 <p id="trigger-v1">V1</p>
@@ -54,16 +58,20 @@
         </div>
 
 
-        <div id="reel-v1" class="reel-oculto"><iframe width="560" height="315"
-                src="https://www.youtube-nocookie.com/embed/7QyimgNAyN4?si=9JuIjK7Mn8zjjxYl"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div id="reel-v1" class="reel-oculto">
+            <video width="100%" height="100%" controls>
+                <source src="media/video/v1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
         </div>
 
 
         <div id="reel-v2" class="reel-oculto">
+              <video width="100%" height="100%" controls>
+                <source src="media/video/v2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <div id="close" class="hidden">X</div>
@@ -129,11 +137,11 @@
                         <h2 class="dv2">Edición <br>de video</h2><img src="media/img/00/d_2.gif" alt="">
                     </article>
                 </a>
-                <!--             <a href=""> -->
-                <article>
-                    <h2 class="dv3">Programación creativa</h2><img src="media/img/00/d_3.gif" alt="">
-                </article>
-                <!--    </a> -->
+                <a href="https://www.behance.net/gallery/158742683/Alternative-physical-interfaces">
+                    <article>
+                        <h2 class="dv3">Programación creativa</h2><img src="media/img/00/d_3.gif" alt="">
+                    </article>
+                </a>
                 <!--  <a href=""> -->
                 <article>
                     <h2 class="dv4">Fotografía</h2><img src="media/img/00/d_4.jpg" alt="">
@@ -190,7 +198,7 @@
 
     <!-- FINAL -->
     <section id="final">
-        <h1 id="final_h1"><a href="">Un gran proyecto <br>puede surgir <br>de una pequeña idea</a></h1>
+        <h1 id="final_h1"><a href="mailto:victoriarchv@gmail.com?subject=Pequeña idea" target="_blank">Un gran proyecto <br>puede surgir <br>de una pequeña idea</a></h1>
         <div id="contacto" class="hidden">
             <p>Contactame!</p>
         </div>
@@ -199,7 +207,7 @@
     <!-- FOOTER -->
     <footer>
         <div>
-            <p><a href="" target="_blank">Instagram</a></p>
+            <p><a href="https://www.instagram.com/victoriarchv_/" target="_blank">Instagram</a></p>
             <p><a href="https://www.linkedin.com/in/victoriarch/" target="_blank">LinkedIn</a></p>
             <p><a href="mailto:victoriarchv@gmail.com?subject=Nueva propuesta" target="_blank">Email</a></p>
         </div>

@@ -3,14 +3,98 @@
 import { initScrollHorizontal } from './scrollH.js'; /* HORIZONTAL SCROLL */
 import { initMenu } from './nav.js'; /* NAV */
 
-let body = document.querySelector("body")
-
 document.addEventListener('DOMContentLoaded', () => {
     //applyPerspectiveEffect();
     initScrollHorizontal();
     initMenu();
-    body.style.overflow = "hidden";
 });
+
+setTimeout(() => {
+    document.querySelector("#load").style.transform = "translateY(-100%)"
+}, 500)
+
+/* VIDEOPLAYER */
+/* setear overflow del body cuadno se va, 
+setear videoplayer al punto inicial cuando se cierra */
+
+let body = document.querySelector("body")
+
+let videoplayer = document.querySelector("#videoplayer");
+let intro = document.querySelector("#intro video");
+let options = document.querySelector("#options")
+
+let triggerV1 = document.querySelector("#trigger-v1");
+let triggerV2 = document.querySelector("#trigger-v2");
+let reelV1 = document.querySelector("#reel-v1 video");
+let reelV2 = document.querySelector("#reel-v2 video");
+let contReelV1 = document.querySelector("#reel-v1");
+let contReelV2 = document.querySelector("#reel-v2");
+
+let closeBT = document.querySelector("#close")
+
+
+console.log(localStorage.getItem('hasVisited'));
+
+if (!localStorage.getItem('hasVisited')) {
+    console.log("First visit.");
+    videoplayer.classList.remove("hidden")
+    body.style.overflow = "hidden"
+    localStorage.setItem('hasVisited', 'true');
+} else {
+    // The user has visited before
+    console.log("Welcome back!");
+    videoplayer.classList.add("hidden")
+    body.style.overflow = "auto"
+}
+
+document.querySelector("#inicio").addEventListener("click", () => {
+    videoplayer.classList.remove("hidden")
+})
+
+
+intro.addEventListener("timeupdate", () => {
+    console.log(intro.currentTime);
+
+    if (intro.currentTime >= 15) {
+        options.classList.remove("hide")
+    }
+})
+
+triggerV1.addEventListener("click", () => {
+    options.classList.add("hide")
+    contReelV1.classList.remove("reel-oculto")
+})
+
+triggerV2.addEventListener("click", () => {
+    options.classList.add("hide")
+    contReelV2.classList.remove("reel-oculto")
+})
+
+reelV1.addEventListener("timeupdate", () => {
+    if (reelV1.currentTime >= 9) {
+        closeBT.classList.remove("hidden")
+    }
+
+})
+
+reelV2.addEventListener("timeupdate", () => {
+    if (reelV2.currentTime >= 9) {
+        closeBT.classList.remove("hidden")
+    }
+
+})
+
+
+closeBT.addEventListener("click", () => {
+
+    videoplayer.classList.add("hidden")
+    body.style.overflow = "auto"
+    reelV1.classList.add("reel-oculto")
+    reelV2.classList.add("reel-oculto")
+    closeBT.classList.add("hidden")
+})
+
+
 
 /* INICIALIZA GSAP */
 gsap.registerPlugin(ScrollTrigger);
@@ -112,54 +196,4 @@ document.querySelector("#final_h1").addEventListener("mousemove", (e) => {
 
 })
 
-
-/* VIDEOPLAYER */
-
-/* setear overflow del body cuadno se va, 
-setear videoplayer al punto inicial cuando se cierra */
-
-let videoplayer = document.querySelector("#videoplayer");
-let intro = document.querySelector("#intro");
-let options = document.querySelector("#options")
-
-let triggerV1 = document.querySelector("#trigger-v1");
-let triggerV2 = document.querySelector("#trigger-v2");
-let reelV1 = document.querySelector("#reel-v1");
-let reelV2 = document.querySelector("#reel-v2");
-
-let closeBT = document.querySelector("#close")
-
-setTimeout(() => {
-    options.classList.remove("hide")
-}, 16000)
-
-triggerV1.addEventListener("click", () => {
-    reelV1.classList.remove("reel-oculto")
-
-    setTimeout(() => {
-        closeBT.classList.remove("hidden")
-    }, 5000)
-})
-
-triggerV2.addEventListener("click", () => {
-    reelV2.classList.remove("reel-oculto")
-
-    setTimeout(() => {
-        closeBT.classList.remove("hidden")
-    }, 5000)
-})
-
-closeBT.addEventListener("click", () => {
-    videoplayer.classList.add("hidden")
-    body.style.overflow = "auto"
-
-    options.classList.add("hide")
-    reelV1.classList.add("reel-oculto")
-    reelV2.classList.add("reel-oculto")
-    closeBT.classList.add("hidden")
-})
-
-document.querySelector("#inicio").addEventListener("click", () => {
-    videoplayer.classList.remove("hidden")
-})
 

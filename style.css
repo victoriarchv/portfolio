@@ -18,6 +18,25 @@ body {
 }
 
 /* CUSTOM CURSOR */
+/* LOAD */
+#load {
+  width: 100vw;
+  height: 100vh;
+  background-color: #CF3CA7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#load p {
+  font-weight: 600;
+  font-size: 4em;
+}
+
 /* MENÚ */
 nav {
   z-index: 100;
@@ -400,6 +419,9 @@ section#final #contacto {
 }
 section#final #contacto p {
   transform: translate(-50%, 50%);
+}
+section#final .hidden {
+  opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -923,10 +945,10 @@ div#videoplayer #trigger-intro {
   width: 100%;
   height: 100%;
 }
-div#videoplayer #intro iframe,
-div#videoplayer #reel-v1 iframe,
-div#videoplayer #reel-v2 iframe,
-div#videoplayer #trigger-intro iframe {
+div#videoplayer #intro video,
+div#videoplayer #reel-v1 video,
+div#videoplayer #reel-v2 video,
+div#videoplayer #trigger-intro video {
   width: 100%;
   height: 100%;
 }
