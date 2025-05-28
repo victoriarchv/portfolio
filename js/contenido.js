@@ -104,7 +104,10 @@ const contenido = [
                 tipo: "video",
                 cont: `
 
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/TFhuYl-TVfs?si=cnwGzjA6Zv2bbPoi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 <video width="100%" height="100%" controls>
+                <source src="media/img/02/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
 <audio autoplay muted loop controls>
   <source src="media/img/02/audio.mp3" type="audio/mpeg">
