@@ -56,8 +56,10 @@ document.querySelector("#inicio").addEventListener("click", () => {
 intro.addEventListener("timeupdate", () => {
     console.log(intro.currentTime);
 
-    if (intro.currentTime >= 15) {
+    if (intro.currentTime > 5) {
         options.classList.remove("hide")
+    } else{
+        options.classList.add("hide")
     }
 })
 
